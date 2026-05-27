@@ -1,155 +1,37 @@
 ﻿/* FULL RESPONSIVE DESIGN */
 
-html {
+html{
     scroll-behavior: smooth;
 }
 
-body {
+body{
     overflow-x: hidden;
 }
 
-img {
+img{
     max-width: 100%;
 }
 
-@media (max-width: 1024px) {
-    .hero h1 {
+/* Tablet */
+@media(max-width: 1100px){
+    .project-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media(max-width: 1024px){
+    .hero h1{
         font-size: 3.2rem;
     }
 
-    .hero-image {
+    .hero-image{
         width: 190px;
         height: 190px;
     }
-
-    .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
-@media (max-width: 768px) {
-    .hero {
-        padding: 60px 24px;
-        min-height: 100svh;
-    }
-
-    .hero-image {
-        width: 160px;
-        height: 160px;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.2rem, 10vw, 3rem);
-        line-height: 1.1;
-        text-align: center;
-    }
-
-    .hero p {
-        font-size: 0.95rem;
-        text-align: center;
-        line-height: 1.5;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        gap: 14px;
-    }
-
-    .hero-buttons a,
-    .hero-buttons button {
-        width: min(100%, 280px);
-        text-align: center;
-    }
-
-    .modal {
-        padding: 16px;
-        align-items: flex-start;
-    }
-
-    .modal-card {
-        width: 100%;
-        max-height: 92svh;
-        padding: 24px 18px;
-        overflow-y: auto;
-    }
-
-    .modal-content {
-        grid-template-columns: 1fr;
-    }
-
-    .modal-text h2 {
-        font-size: 2.2rem;
-    }
-
-    .modal-photo img {
-        height: 300px;
-        object-fit: cover;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .projects {
-        padding: 70px 24px;
-    }
-
-    .section-header h2 {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 45px 18px;
-    }
-
-    .hero-image {
-        width: 135px;
-        height: 135px;
-    }
-
-    .hero h1 {
-        font-size: 2.1rem;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    .modal-photo img {
-        height: 240px;
-    }
-
-    .icon-grid span {
-        font-size: 0.82rem;
-        padding: 8px 10px;
-    }
-
-    .project-card {
-        padding: 18px;
-    }
-
-    .project-card img {
-        height: 140px;
-    }
-
-    .back-home {
-        width: 44px;
-        height: 44px;
-        right: 18px;
-        bottom: 18px;
-    }
-}
-
-/* =========================================
-   FINAL MOBILE RESPONSIVENESS OVERRIDE
-   Loaded in responsive.css so it wins last
-========================================= */
-
-@media (max-width: 768px){
+/* Mobile */
+@media(max-width: 768px){
 
     html,
     body{
@@ -157,10 +39,10 @@ img {
         min-height: 100% !important;
         overflow-x: hidden !important;
         overflow-y: auto !important;
+        position: static !important;
     }
 
     body{
-        position: static !important;
         scrollbar-width: none !important;
         -ms-overflow-style: none !important;
     }
@@ -182,6 +64,12 @@ img {
         width: 155px !important;
         height: 155px !important;
         margin-bottom: 26px !important;
+        overflow: hidden !important;
+    }
+
+    .hero-image img,
+    .image-overlay{
+        overflow: hidden !important;
     }
 
     .hero h1{
@@ -223,9 +111,10 @@ img {
     }
 
     .projects{
+        width: 100% !important;
         min-height: auto !important;
         height: auto !important;
-        padding: 75px 20px !important;
+        padding: 70px 20px 120px !important;
         overflow: visible !important;
     }
 
@@ -249,16 +138,25 @@ img {
         width: 100% !important;
         display: grid !important;
         grid-template-columns: 1fr !important;
-        gap: 22px !important;
+        gap: 24px !important;
+        overflow: visible !important;
     }
 
     .project-card{
         width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
         padding: 22px !important;
+        overflow: hidden !important;
     }
 
     .project-card img{
-        height: 145px !important;
+        height: 150px !important;
+        overflow: hidden !important;
+    }
+
+    .project-overlay{
+        overflow: hidden !important;
     }
 
     .modal{
@@ -269,10 +167,10 @@ img {
 
     .modal-card{
         width: 100% !important;
-        max-height: none !important;
+        max-height: 92svh !important;
         margin: 24px 0 !important;
         padding: 26px 20px !important;
-        overflow-y: visible !important;
+        overflow-y: auto !important;
     }
 
     .modal-content{
@@ -295,8 +193,9 @@ img {
 
     .project-modal-card{
         width: 100% !important;
-        max-height: none !important;
+        max-height: 92svh !important;
         padding: 30px 20px !important;
+        overflow-y: auto !important;
     }
 
     .project-modal-layout{
@@ -318,10 +217,6 @@ img {
         right: 18px !important;
         bottom: 18px !important;
     }
-}
-
-/* Certificates page mobile override */
-@media (max-width: 768px){
 
     .certificates-body{
         overflow-x: hidden !important;
@@ -343,6 +238,7 @@ img {
     .cert-card{
         width: 100% !important;
         padding: 16px !important;
+        overflow: hidden !important;
     }
 
     .cert-card img,
@@ -358,9 +254,10 @@ img {
 
     .cert-modal-card{
         width: 100% !important;
-        max-height: none !important;
+        max-height: 92svh !important;
         margin: 18px 0 !important;
         padding: 22px 14px !important;
+        overflow: hidden !important;
     }
 
     .cert-image-stage{
@@ -372,94 +269,46 @@ img {
     }
 }
 
-/* =========================================
-   FINAL MOBILE SCROLL FIX
-========================================= */
-
-@media (max-width: 768px){
-
-    html,
-    body{
-        width: 100% !important;
-        min-height: 100% !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        position: static !important;
-    }
-
-    .hero,
-    .projects{
-        width: 100% !important;
-        min-height: auto !important;
-        height: auto !important;
-        overflow: visible !important;
-    }
-
+/* Small phones */
+@media(max-width: 480px){
     .hero{
-        padding: 65px 20px 55px !important;
+        padding: 50px 18px 55px !important;
     }
 
-    .projects{
-        padding: 70px 20px 120px !important;
+    .hero-image{
+        width: 135px !important;
+        height: 135px !important;
     }
 
-    .project-grid{
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        gap: 24px !important;
-        overflow: visible !important;
+    .hero h1{
+        font-size: 2.1rem !important;
+    }
+
+    .hero p{
+        font-size: 0.9rem !important;
+    }
+
+    .modal-photo img{
+        height: 240px !important;
+    }
+
+    .icon-grid span{
+        font-size: 0.82rem !important;
+        padding: 8px 10px !important;
     }
 
     .project-card{
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;
-        overflow: hidden !important;
+        padding: 18px !important;
     }
 
     .project-card img{
-        height: 150px !important;
-    }
-}
-
-/* =========================================
-   FINAL RESPONSIVE GALLERY LOCK
-========================================= */
-
-@media(max-width: 768px){
-    html,
-    body{
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
+        height: 140px !important;
     }
 
-    .hero-image,
-    .hero-image img,
-    .image-overlay,
-    .project-card,
-    .project-card img,
-    .project-overlay{
-        overflow: hidden !important;
-    }
-
-    .projects{
-        min-height: auto !important;
-        height: auto !important;
-        padding: 70px 20px 120px !important;
-        overflow: visible !important;
-    }
-
-    .project-grid{
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-        overflow: visible !important;
-    }
-
-    .project-card{
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;
+    .back-home{
+        width: 44px !important;
+        height: 44px !important;
+        right: 18px !important;
+        bottom: 18px !important;
     }
 }
