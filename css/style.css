@@ -1,4 +1,8 @@
-﻿*{
+﻿html{
+    scroll-behavior: smooth;
+}
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +13,8 @@ body{
     background: linear-gradient(135deg, #050816, #0b1026, #111827);
     color: white;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .hero{
@@ -63,7 +68,8 @@ body{
     box-shadow: 0 0 30px rgba(124,58,237,0.5), 0 0 60px rgba(56,189,248,0.3);
     animation: float 4s ease-in-out infinite;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     cursor: pointer;
 }
 
@@ -458,7 +464,8 @@ padding: 8px 12px;
     border: 1px solid rgba(255,255,255,0.08);
     backdrop-filter: blur(14px);
     transition: 0.35s ease;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .contact-card::before{
@@ -532,7 +539,8 @@ padding: 8px 12px;
 
 .project-card {
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     cursor: pointer;
 }
 
@@ -948,7 +956,8 @@ html:has(.certificates-body)::-webkit-scrollbar{
 
 .cert-card{
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding: 18px;
     border-radius: 22px;
     background: rgba(255,255,255,0.04);
@@ -1048,7 +1057,8 @@ html:has(.certificates-body)::-webkit-scrollbar{
     box-shadow: 0 0 50px rgba(56,189,248,0.22);
     position: relative;
     text-align: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .cert-modal-close{
@@ -1388,3 +1398,4 @@ html:has(.certificates-body)::-webkit-scrollbar{
         max-height: 66svh;
     }
 }
+
