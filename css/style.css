@@ -1176,3 +1176,215 @@ html:has(.certificates-body)::-webkit-scrollbar{
     line-height: 1.6;
     opacity: 0.8;
 }
+
+/* =========================================
+   MOBILE RESPONSIVENESS PATCH
+========================================= */
+
+@media (max-width: 768px){
+
+    html,
+    body{
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    body::-webkit-scrollbar{
+        width: 0;
+        height: 0;
+    }
+
+    body{
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .hero{
+        min-height: 100svh;
+        padding: 70px 22px 55px;
+    }
+
+    .hero-image{
+        width: 165px;
+        height: 165px;
+        margin-bottom: 28px;
+    }
+
+    .hero h1{
+        font-size: clamp(2.25rem, 12vw, 3.2rem);
+        line-height: 1.05;
+        word-break: normal;
+    }
+
+    .hero p{
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 330px;
+    }
+
+    .hero-buttons-wrapper{
+        width: 100%;
+        margin-top: 30px;
+        gap: 14px;
+    }
+
+    .hero-buttons{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button,
+    .certificate-btn{
+        width: min(260px, 100%);
+        text-align: center;
+    }
+
+    .projects{
+        min-height: auto;
+        padding: 75px 22px;
+    }
+
+    .section-header{
+        margin-bottom: 35px;
+    }
+
+    .section-header h2{
+        font-size: clamp(2.1rem, 10vw, 2.8rem);
+        line-height: 1.1;
+    }
+
+    .section-header p{
+        font-size: 0.95rem;
+    }
+
+    .project-grid{
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .project-card{
+        padding: 22px;
+    }
+
+    .project-card img{
+        height: 150px;
+    }
+
+    .modal{
+        align-items: flex-start;
+        padding: 18px;
+        overflow-y: auto;
+    }
+
+    .modal-card{
+        width: 100%;
+        max-height: none;
+        margin: 24px 0;
+        padding: 26px 20px;
+    }
+
+    .close-modal{
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .modal-content{
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .modal-text h2{
+        font-size: 2.2rem;
+    }
+
+    .modal-photo img{
+        height: 300px;
+    }
+
+    .contact-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .project-modal-card{
+        width: 100%;
+        max-height: none;
+        padding: 30px 20px;
+    }
+
+    .project-preview img{
+        max-width: 230px;
+        max-height: 210px;
+    }
+
+    .project-info h2{
+        font-size: clamp(2rem, 10vw, 2.5rem);
+    }
+
+    .back-home{
+        right: 18px;
+        bottom: 18px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .cert-page{
+        min-height: auto;
+        padding: 45px 20px 60px;
+    }
+
+    .cert-back{
+        margin-bottom: 34px;
+    }
+
+    .cert-helper{
+        margin: -18px auto 30px;
+        font-size: 0.9rem;
+    }
+
+    .cert-grid{
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .cert-card{
+        padding: 16px;
+    }
+
+    .cert-card img,
+    .cert-card::after{
+        height: 190px;
+    }
+
+    .cert-modal{
+        align-items: flex-start;
+        padding: 14px;
+        overflow-y: auto;
+    }
+
+    .cert-modal-card{
+        width: 100%;
+        max-height: none;
+        margin: 18px 0;
+        padding: 22px 14px;
+    }
+
+    .cert-modal-tools{
+        padding-right: 48px;
+        gap: 8px;
+    }
+
+    .cert-image-stage{
+        max-height: 68svh;
+    }
+
+    .cert-image-stage img{
+        max-height: 66svh;
+    }
+}
