@@ -714,3 +714,205 @@ body.project-mode .footer{
         font-size: 0.82rem !important;
     }
 }
+
+/* =========================================
+   FINAL CORRECTION: HERO FOOTER, CERT SCROLL, MODAL X
+========================================= */
+
+/* HOME MODE: hero can scroll down to footer, scrollbar hidden */
+body:not(.project-mode):not(.certificates-body){
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+body:not(.project-mode):not(.certificates-body)::-webkit-scrollbar{
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+body:not(.project-mode):not(.certificates-body) .hero{
+    display: flex !important;
+    min-height: 100vh !important;
+}
+
+body:not(.project-mode):not(.certificates-body) #projects{
+    display: none !important;
+}
+
+body:not(.project-mode):not(.certificates-body) .footer{
+    display: block !important;
+}
+
+/* PROJECT MODE: hero hidden, projects shown, footer shown */
+body.project-mode{
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+body.project-mode .hero{
+    display: none !important;
+}
+
+body.project-mode #projects{
+    display: block !important;
+}
+
+body.project-mode .footer{
+    display: block !important;
+}
+
+/* DESKTOP PROJECT VIEW: fit project gallery + footer */
+body.project-mode #projects{
+    height: calc(100vh - 78px) !important;
+    min-height: calc(100vh - 78px) !important;
+    padding: 45px 8% 24px !important;
+    overflow: hidden !important;
+}
+
+body.project-mode #projects .section-header{
+    margin-bottom: 28px !important;
+}
+
+body.project-mode #projects .section-header h2{
+    font-size: clamp(2.2rem, 3.6vw, 3rem) !important;
+    margin-bottom: 10px !important;
+}
+
+body.project-mode #projects .section-header p{
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+}
+
+body.project-mode #projects .project-grid{
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+}
+
+body.project-mode #projects .project-card{
+    padding: 18px !important;
+    overflow: hidden !important;
+}
+
+body.project-mode #projects .project-card img{
+    height: clamp(105px, 15vh, 150px) !important;
+    margin-bottom: 14px !important;
+}
+
+body.project-mode #projects .project-card h3{
+    font-size: 1.08rem !important;
+    margin-bottom: 9px !important;
+}
+
+body.project-mode #projects .project-card p{
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 14px !important;
+}
+
+body.project-mode .footer{
+    height: 78px !important;
+    padding: 24px 20px !important;
+}
+
+/* PHONE PROJECT VIEW: project tab scrolls internally only */
+@media(max-width: 768px){
+    body.project-mode{
+        overflow: hidden !important;
+        height: 100svh !important;
+    }
+
+    body.project-mode #projects{
+        height: calc(100svh - 78px) !important;
+        min-height: calc(100svh - 78px) !important;
+        padding: 55px 20px 40px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+
+    body.project-mode #projects::-webkit-scrollbar{
+        width: 0 !important;
+        height: 0 !important;
+        display: none !important;
+    }
+
+    body.project-mode #projects .project-grid{
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    body.project-mode #projects .project-card{
+        padding: 22px !important;
+    }
+
+    body.project-mode #projects .project-card img{
+        height: 150px !important;
+    }
+}
+
+/* CERTIFICATES PAGE: scrollable again, scrollbar hidden */
+html:has(body.certificates-body),
+body.certificates-body{
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html:has(body.certificates-body)::-webkit-scrollbar,
+body.certificates-body::-webkit-scrollbar{
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+body.certificates-body .cert-page{
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-bottom: 80px !important;
+}
+
+body.certificates-body .cert-grid{
+    overflow: visible !important;
+}
+
+/* MODAL CLOSE BUTTONS: always above text/assets */
+.close-modal,
+.cert-modal-close,
+.viewer-close{
+    position: sticky !important;
+    top: 0 !important;
+    margin-left: auto !important;
+    z-index: 99999 !important;
+    background: rgba(15, 23, 42, 0.96) !important;
+    backdrop-filter: blur(10px) !important;
+    isolation: isolate !important;
+}
+
+.cert-modal-close{
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+}
+
+.modal-card,
+.project-modal-card,
+.cert-modal-card{
+    position: relative !important;
+}
+
+.modal-content,
+.project-modal-layout,
+.cert-image-stage{
+    position: relative !important;
+    z-index: 1 !important;
+}
