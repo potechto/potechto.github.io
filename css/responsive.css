@@ -422,3 +422,44 @@ img {
         height: 150px !important;
     }
 }
+
+/* =========================================
+   FINAL RESPONSIVE GALLERY LOCK
+========================================= */
+
+@media(max-width: 768px){
+    html,
+    body{
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    .hero-image,
+    .hero-image img,
+    .image-overlay,
+    .project-card,
+    .project-card img,
+    .project-overlay{
+        overflow: hidden !important;
+    }
+
+    .projects{
+        min-height: auto !important;
+        height: auto !important;
+        padding: 70px 20px 120px !important;
+        overflow: visible !important;
+    }
+
+    .project-grid{
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        overflow: visible !important;
+    }
+
+    .project-card{
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+}
