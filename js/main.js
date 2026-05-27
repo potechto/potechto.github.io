@@ -396,3 +396,33 @@ if (viewProjectsButton && projectsSection && backHome) {
         }, 450);
     });
 }
+
+/* FINAL PORTFOLIO SECTION SWITCH SCRIPT */
+
+const finalViewProjectsBtn = document.querySelector('.hero-buttons a[href="#projects"]');
+const finalProjectsSection = document.getElementById("projects");
+const finalBackHomeBtn = document.getElementById("backHome");
+
+if (finalViewProjectsBtn && finalProjectsSection && finalBackHomeBtn) {
+    finalViewProjectsBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        document.body.classList.add("project-mode");
+        finalProjectsSection.scrollTop = 0;
+        finalBackHomeBtn.classList.add("show");
+
+        history.replaceState(null, "", "#projects");
+    }, true);
+
+    finalBackHomeBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        document.body.classList.remove("project-mode");
+        finalProjectsSection.scrollTop = 0;
+        finalBackHomeBtn.classList.remove("show");
+
+        history.replaceState(null, "", window.location.pathname);
+    }, true);
+}
