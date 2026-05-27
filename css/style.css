@@ -1399,3 +1399,42 @@ html:has(.certificates-body)::-webkit-scrollbar{
     }
 }
 
+
+/* =========================================
+   FINAL GLOBAL SCROLL + PROJECT FIX
+========================================= */
+
+html,
+body{
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+body{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.projects{
+    min-height: auto !important;
+    height: auto !important;
+    padding-bottom: 130px !important;
+    overflow: visible !important;
+}
+
+.project-grid{
+    align-items: stretch !important;
+}
+
+.project-card{
+    height: auto !important;
+    min-height: 100% !important;
+}
