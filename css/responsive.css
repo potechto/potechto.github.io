@@ -495,3 +495,67 @@ body.certificates-body .cert-page{
     position: relative !important;
     z-index: 1 !important;
 }
+
+/* =========================================
+   FINAL HERO FULL-SCREEN SMOOTH LOCK
+========================================= */
+
+/* Home mode: full screen hero, no awkward page scroll */
+body:not(.project-mode):not(.certificates-body){
+    height: 100vh !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
+}
+
+/* Hero uses the main screen area */
+body:not(.project-mode):not(.certificates-body) .hero{
+    min-height: calc(100vh - 72px) !important;
+    height: calc(100vh - 72px) !important;
+    padding: 45px 10% 35px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Footer stays visible without scrolling */
+body:not(.project-mode):not(.certificates-body) .footer{
+    display: block !important;
+    height: 72px !important;
+    padding: 22px 20px !important;
+    background: #070b1a !important;
+}
+
+/* Keep scrollbars hidden */
+html,
+body{
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+/* Mobile hero still fits cleanly */
+@media(max-width: 768px){
+    body:not(.project-mode):not(.certificates-body){
+        height: 100svh !important;
+        min-height: 100svh !important;
+        overflow: hidden !important;
+    }
+
+    body:not(.project-mode):not(.certificates-body) .hero{
+        height: calc(100svh - 72px) !important;
+        min-height: calc(100svh - 72px) !important;
+        padding: 35px 20px 28px !important;
+    }
+
+    body:not(.project-mode):not(.certificates-body) .footer{
+        height: 72px !important;
+        padding: 20px 14px !important;
+        font-size: 0.78rem !important;
+    }
+}
