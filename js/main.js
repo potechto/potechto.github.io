@@ -360,3 +360,39 @@ if (closeProject) {
     });
 }
 
+
+/* FINAL SECTION LOCK PROJECT NAVIGATION */
+
+const viewProjectsButton = document.querySelector('.hero-buttons a[href="#projects"]');
+const projectsSection = document.getElementById("projects");
+
+if (viewProjectsButton && projectsSection && backHome) {
+    viewProjectsButton.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        projectsSection.classList.add("active");
+        backHome.classList.add("show");
+
+        requestAnimationFrame(() => {
+            projectsSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+            projectsSection.scrollTop = 0;
+        });
+    });
+
+    backHome.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        setTimeout(() => {
+            projectsSection.classList.remove("active");
+            projectsSection.scrollTop = 0;
+            backHome.classList.remove("show");
+        }, 450);
+    });
+}

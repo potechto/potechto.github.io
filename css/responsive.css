@@ -312,3 +312,97 @@ img{
         bottom: 18px !important;
     }
 }
+
+/* =========================================
+   FINAL SECTION LOCK BEHAVIOR
+========================================= */
+
+/* Main portfolio page should not freely scroll */
+body:not(.certificates-body){
+    overflow: hidden !important;
+}
+
+/* Projects are hidden until View Projects is clicked */
+#projects{
+    display: none !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    padding: 80px 8% 120px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+#projects::-webkit-scrollbar{
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+#projects.active{
+    display: block !important;
+}
+
+/* Keep project cards clean, no inner scrollbars */
+.project-card,
+.project-card img,
+.project-overlay,
+.hero-image,
+.hero-image img,
+.image-overlay{
+    overflow: hidden !important;
+}
+
+/* Desktop gallery */
+#projects .project-grid{
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+}
+
+#projects .project-card{
+    height: auto !important;
+    min-height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#projects .project-card span{
+    margin-top: auto !important;
+}
+
+/* Tablet gallery */
+@media(max-width: 1100px){
+    #projects .project-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Phone gallery */
+@media(max-width: 768px){
+    #projects{
+        height: 100svh !important;
+        min-height: 100svh !important;
+        padding: 70px 20px 120px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    #projects .project-grid{
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    #projects .project-card{
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 22px !important;
+    }
+
+    #projects .project-card img{
+        height: 150px !important;
+    }
+}
