@@ -1,25 +1,160 @@
-﻿/* FULL RESPONSIVE DESIGN */
+﻿/* FULL RESPONSIVE DESIGN - CLEAN FINAL VERSION */
 
-html{
-    scroll-behavior: smooth;
+/* Hide scrollbars visually, but allow scroll where enabled */
+html,
+body{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-body{
-    overflow-x: hidden;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#projects::-webkit-scrollbar,
+.modal::-webkit-scrollbar,
+.modal-card::-webkit-scrollbar,
+.project-modal-card::-webkit-scrollbar,
+.cert-modal::-webkit-scrollbar,
+.cert-image-stage::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    display: none;
 }
 
 img{
     max-width: 100%;
 }
 
-/* Tablet */
-@media(max-width: 1100px){
-    .project-grid{
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
+/* =========================
+   HOME MODE
+========================= */
+
+body:not(.project-mode):not(.certificates-body){
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
 }
 
-@media(max-width: 1024px){
+body:not(.project-mode):not(.certificates-body) .hero{
+    display: flex !important;
+    min-height: 100vh !important;
+}
+
+body:not(.project-mode):not(.certificates-body) #projects{
+    display: none !important;
+}
+
+body:not(.project-mode):not(.certificates-body) .footer{
+    display: block !important;
+}
+
+/* =========================
+   PROJECT MODE
+========================= */
+
+body.project-mode{
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+body.project-mode .hero{
+    display: none !important;
+}
+
+body.project-mode #projects{
+    display: block !important;
+}
+
+body.project-mode .footer{
+    display: block !important;
+}
+
+/* Desktop / laptop project view */
+body.project-mode #projects{
+    height: calc(100vh - 78px) !important;
+    min-height: calc(100vh - 78px) !important;
+    padding: 42px 8% 24px !important;
+    overflow: hidden !important;
+    background: #070b1a !important;
+}
+
+body.project-mode #projects .section-header{
+    margin-bottom: 26px !important;
+}
+
+body.project-mode #projects .section-header h2{
+    font-size: clamp(2.2rem, 3.5vw, 3rem) !important;
+    margin-bottom: 10px !important;
+}
+
+body.project-mode #projects .section-header p{
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+}
+
+body.project-mode #projects .project-grid{
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+}
+
+body.project-mode #projects .project-card{
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 18px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+body.project-mode #projects .project-card img{
+    height: clamp(105px, 15vh, 150px) !important;
+    margin-bottom: 14px !important;
+    overflow: hidden !important;
+}
+
+body.project-mode #projects .project-card h3{
+    font-size: 1.08rem !important;
+    margin-bottom: 9px !important;
+}
+
+body.project-mode #projects .project-card p{
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 14px !important;
+}
+
+body.project-mode #projects .project-card span{
+    margin-top: auto !important;
+}
+
+body.project-mode .footer{
+    height: 78px !important;
+    padding: 24px 20px !important;
+    background: #070b1a !important;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width: 1100px){
+    body.project-mode #projects{
+        overflow-y: auto !important;
+        padding: 55px 6% 35px !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+
+    body.project-mode #projects .project-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .project-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .hero h1{
         font-size: 3.2rem;
     }
@@ -30,27 +165,16 @@ img{
     }
 }
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width: 768px){
 
-    html,
-    body{
-        width: 100% !important;
-        min-height: 100% !important;
+    body:not(.project-mode):not(.certificates-body){
         overflow-x: hidden !important;
         overflow-y: auto !important;
-        position: static !important;
-    }
-
-    body{
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-    }
-
-    body::-webkit-scrollbar{
-        width: 0 !important;
-        height: 0 !important;
-        display: none !important;
+        height: auto !important;
     }
 
     .hero{
@@ -64,11 +188,6 @@ img{
         width: 155px !important;
         height: 155px !important;
         margin-bottom: 26px !important;
-        overflow: hidden !important;
-    }
-
-    .hero-image img,
-    .image-overlay{
         overflow: hidden !important;
     }
 
@@ -110,39 +229,41 @@ img{
         text-align: center !important;
     }
 
-    .projects{
-        width: 100% !important;
-        min-height: auto !important;
-        height: auto !important;
-        padding: 70px 20px 120px !important;
-        overflow: visible !important;
+    body.project-mode{
+        height: 100svh !important;
+        overflow: hidden !important;
     }
 
-    .section-header{
-        max-width: 100% !important;
-        margin: 0 auto 35px !important;
-        padding: 0 !important;
+    body.project-mode #projects{
+        height: calc(100svh - 78px) !important;
+        min-height: calc(100svh - 78px) !important;
+        padding: 55px 20px 40px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
     }
 
-    .section-header h2{
+    body.project-mode #projects .section-header{
+        margin-bottom: 35px !important;
+    }
+
+    body.project-mode #projects .section-header h2{
         font-size: clamp(2rem, 11vw, 2.8rem) !important;
         line-height: 1.1 !important;
     }
 
-    .section-header p{
+    body.project-mode #projects .section-header p{
         font-size: 0.95rem !important;
         line-height: 1.65 !important;
     }
 
-    .project-grid{
-        width: 100% !important;
-        display: grid !important;
+    body.project-mode #projects .project-grid{
         grid-template-columns: 1fr !important;
         gap: 24px !important;
-        overflow: visible !important;
     }
 
-    .project-card{
+    body.project-mode #projects .project-card{
         width: 100% !important;
         height: auto !important;
         min-height: auto !important;
@@ -150,13 +271,14 @@ img{
         overflow: hidden !important;
     }
 
-    .project-card img{
+    body.project-mode #projects .project-card img{
         height: 150px !important;
-        overflow: hidden !important;
     }
 
-    .project-overlay{
-        overflow: hidden !important;
+    body.project-mode .footer{
+        height: 78px !important;
+        padding: 24px 16px !important;
+        font-size: 0.82rem !important;
     }
 
     .modal{
@@ -217,59 +339,12 @@ img{
         right: 18px !important;
         bottom: 18px !important;
     }
-
-    .certificates-body{
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
-
-    .cert-page{
-        min-height: auto !important;
-        height: auto !important;
-        padding: 45px 20px 60px !important;
-    }
-
-    .cert-grid{
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 22px !important;
-    }
-
-    .cert-card{
-        width: 100% !important;
-        padding: 16px !important;
-        overflow: hidden !important;
-    }
-
-    .cert-card img,
-    .cert-card::after{
-        height: 190px !important;
-    }
-
-    .cert-modal{
-        align-items: flex-start !important;
-        padding: 14px !important;
-        overflow-y: auto !important;
-    }
-
-    .cert-modal-card{
-        width: 100% !important;
-        max-height: 92svh !important;
-        margin: 18px 0 !important;
-        padding: 22px 14px !important;
-        overflow: hidden !important;
-    }
-
-    .cert-image-stage{
-        max-height: 68svh !important;
-    }
-
-    .cert-image-stage img{
-        max-height: 66svh !important;
-    }
 }
 
-/* Small phones */
+/* =========================
+   SMALL PHONES
+========================= */
+
 @media(max-width: 480px){
     .hero{
         padding: 50px 18px 55px !important;
@@ -313,550 +388,10 @@ img{
     }
 }
 
-/* =========================================
-   FINAL SECTION LOCK BEHAVIOR
-========================================= */
+/* =========================
+   CERTIFICATES PAGE
+========================= */
 
-/* Main portfolio page should not freely scroll */
-body:not(.certificates-body){
-    overflow: hidden !important;
-}
-
-/* Projects are hidden until View Projects is clicked */
-#projects{
-    display: none !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    padding: 80px 8% 120px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-}
-
-#projects::-webkit-scrollbar{
-    width: 0 !important;
-    height: 0 !important;
-    display: none !important;
-}
-
-#projects.active{
-    display: block !important;
-}
-
-/* Keep project cards clean, no inner scrollbars */
-.project-card,
-.project-card img,
-.project-overlay,
-.hero-image,
-.hero-image img,
-.image-overlay{
-    overflow: hidden !important;
-}
-
-/* Desktop gallery */
-#projects .project-grid{
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 24px !important;
-    align-items: stretch !important;
-}
-
-#projects .project-card{
-    height: auto !important;
-    min-height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-#projects .project-card span{
-    margin-top: auto !important;
-}
-
-/* Tablet gallery */
-@media(max-width: 1100px){
-    #projects .project-grid{
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-}
-
-/* Phone gallery */
-@media(max-width: 768px){
-    #projects{
-        height: 100svh !important;
-        min-height: 100svh !important;
-        padding: 70px 20px 120px !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-    }
-
-    #projects .project-grid{
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-    }
-
-    #projects .project-card{
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;
-        padding: 22px !important;
-    }
-
-    #projects .project-card img{
-        height: 150px !important;
-    }
-}
-
-/* =========================================
-   FINAL PORTFOLIO SECTION SWITCH BEHAVIOR
-========================================= */
-
-/* Hide main page scrollbar */
-html,
-body{
-    overflow: hidden !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar{
-    width: 0 !important;
-    height: 0 !important;
-    display: none !important;
-}
-
-/* Certificates page must still scroll */
-body.certificates-body{
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-}
-
-/* Default: show hero, hide projects */
-body:not(.project-mode) .hero{
-    display: flex !important;
-}
-
-body:not(.project-mode) #projects{
-    display: none !important;
-}
-
-/* Project mode: hide hero, show projects */
-body.project-mode .hero{
-    display: none !important;
-}
-
-body.project-mode #projects{
-    display: block !important;
-}
-
-/* Desktop/laptop projects: full screen, no internal scrollbar */
-body.project-mode #projects{
-    width: 100% !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    padding: 70px 8% 80px !important;
-    overflow: hidden !important;
-    background: #070b1a !important;
-}
-
-/* Desktop gallery: one row when space allows */
-body.project-mode #projects .project-grid{
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 24px !important;
-    align-items: stretch !important;
-}
-
-body.project-mode #projects .project-card{
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-body.project-mode #projects .project-card img{
-    height: clamp(125px, 18vh, 170px) !important;
-    overflow: hidden !important;
-}
-
-body.project-mode #projects .project-card span{
-    margin-top: auto !important;
-}
-
-/* Tablet */
-@media(max-width: 1100px){
-    body.project-mode #projects{
-        overflow-y: auto !important;
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-    }
-
-    body.project-mode #projects::-webkit-scrollbar{
-        width: 0 !important;
-        height: 0 !important;
-        display: none !important;
-    }
-
-    body.project-mode #projects .project-grid{
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-}
-
-/* Phone: projects scroll inside this section only */
-@media(max-width: 768px){
-    body.project-mode #projects{
-        height: 100svh !important;
-        min-height: 100svh !important;
-        padding: 70px 20px 120px !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-    }
-
-    body.project-mode #projects::-webkit-scrollbar{
-        width: 0 !important;
-        height: 0 !important;
-        display: none !important;
-    }
-
-    body.project-mode #projects .project-grid{
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-    }
-
-    body.project-mode #projects .project-card{
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;
-        padding: 22px !important;
-        overflow: hidden !important;
-    }
-
-    body.project-mode #projects .project-card img{
-        height: 150px !important;
-    }
-}
-
-/* =========================================
-   FINAL VIEW MODE + FOOTER BEHAVIOR
-========================================= */
-
-/* Hide all scrollbars but keep allowed scrolling */
-html,
-body{
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-#projects::-webkit-scrollbar,
-.modal-card::-webkit-scrollbar,
-.project-modal-card::-webkit-scrollbar,
-.cert-image-stage::-webkit-scrollbar{
-    width: 0 !important;
-    height: 0 !important;
-    display: none !important;
-}
-
-/* HOME MODE */
-body:not(.project-mode){
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-}
-
-body:not(.project-mode) .hero{
-    display: flex !important;
-}
-
-body:not(.project-mode) #projects{
-    display: none !important;
-}
-
-body:not(.project-mode) .footer{
-    display: block !important;
-}
-
-/* PROJECT MODE */
-body.project-mode{
-    height: 100vh !important;
-    overflow: hidden !important;
-}
-
-body.project-mode .hero{
-    display: none !important;
-}
-
-body.project-mode #projects{
-    display: block !important;
-}
-
-body.project-mode .footer{
-    display: block !important;
-}
-
-/* Desktop/laptop project page should fit with footer visible */
-body.project-mode #projects{
-    height: calc(100vh - 78px) !important;
-    min-height: calc(100vh - 78px) !important;
-    padding: 52px 8% 28px !important;
-    overflow: hidden !important;
-    background: #070b1a !important;
-}
-
-body.project-mode #projects .section-header{
-    margin-bottom: 34px !important;
-}
-
-body.project-mode #projects .section-header h2{
-    font-size: clamp(2.4rem, 4vw, 3.2rem) !important;
-    margin-bottom: 12px !important;
-}
-
-body.project-mode #projects .section-header p{
-    line-height: 1.55 !important;
-    font-size: 0.95rem !important;
-}
-
-body.project-mode #projects .project-grid{
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 22px !important;
-    align-items: stretch !important;
-    overflow: visible !important;
-}
-
-body.project-mode #projects .project-card{
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 20px !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-body.project-mode #projects .project-card img{
-    height: clamp(110px, 16vh, 155px) !important;
-    margin-bottom: 16px !important;
-    overflow: hidden !important;
-}
-
-body.project-mode #projects .project-card h3{
-    font-size: 1.12rem !important;
-    margin-bottom: 10px !important;
-}
-
-body.project-mode #projects .project-card p{
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
-    margin-bottom: 16px !important;
-}
-
-body.project-mode #projects .project-card span{
-    margin-top: auto !important;
-}
-
-/* Footer sizing in project mode */
-body.project-mode .footer{
-    height: 78px !important;
-    padding: 24px 20px !important;
-    background: #070b1a !important;
-}
-
-/* Tablet can scroll project area if needed */
-@media(max-width: 1100px){
-    body.project-mode #projects{
-        overflow-y: auto !important;
-        padding: 60px 6% 35px !important;
-    }
-
-    body.project-mode #projects .project-grid{
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-}
-
-/* Phone: only projects section scrolls, footer remains after section content */
-@media(max-width: 768px){
-    body.project-mode{
-        overflow: hidden !important;
-    }
-
-    body.project-mode #projects{
-        height: calc(100svh - 78px) !important;
-        min-height: calc(100svh - 78px) !important;
-        padding: 55px 20px 40px !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-    }
-
-    body.project-mode #projects .project-grid{
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-    }
-
-    body.project-mode #projects .project-card{
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;
-        padding: 22px !important;
-    }
-
-    body.project-mode #projects .project-card img{
-        height: 150px !important;
-    }
-
-    body.project-mode .footer{
-        height: 78px !important;
-        padding: 24px 16px !important;
-        font-size: 0.82rem !important;
-    }
-}
-
-/* =========================================
-   FINAL CORRECTION: HERO FOOTER, CERT SCROLL, MODAL X
-========================================= */
-
-/* HOME MODE: hero can scroll down to footer, scrollbar hidden */
-body:not(.project-mode):not(.certificates-body){
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-}
-
-body:not(.project-mode):not(.certificates-body)::-webkit-scrollbar{
-    width: 0 !important;
-    height: 0 !important;
-    display: none !important;
-}
-
-body:not(.project-mode):not(.certificates-body) .hero{
-    display: flex !important;
-    min-height: 100vh !important;
-}
-
-body:not(.project-mode):not(.certificates-body) #projects{
-    display: none !important;
-}
-
-body:not(.project-mode):not(.certificates-body) .footer{
-    display: block !important;
-}
-
-/* PROJECT MODE: hero hidden, projects shown, footer shown */
-body.project-mode{
-    overflow: hidden !important;
-    height: 100vh !important;
-}
-
-body.project-mode .hero{
-    display: none !important;
-}
-
-body.project-mode #projects{
-    display: block !important;
-}
-
-body.project-mode .footer{
-    display: block !important;
-}
-
-/* DESKTOP PROJECT VIEW: fit project gallery + footer */
-body.project-mode #projects{
-    height: calc(100vh - 78px) !important;
-    min-height: calc(100vh - 78px) !important;
-    padding: 45px 8% 24px !important;
-    overflow: hidden !important;
-}
-
-body.project-mode #projects .section-header{
-    margin-bottom: 28px !important;
-}
-
-body.project-mode #projects .section-header h2{
-    font-size: clamp(2.2rem, 3.6vw, 3rem) !important;
-    margin-bottom: 10px !important;
-}
-
-body.project-mode #projects .section-header p{
-    font-size: 0.92rem !important;
-    line-height: 1.5 !important;
-}
-
-body.project-mode #projects .project-grid{
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 22px !important;
-}
-
-body.project-mode #projects .project-card{
-    padding: 18px !important;
-    overflow: hidden !important;
-}
-
-body.project-mode #projects .project-card img{
-    height: clamp(105px, 15vh, 150px) !important;
-    margin-bottom: 14px !important;
-}
-
-body.project-mode #projects .project-card h3{
-    font-size: 1.08rem !important;
-    margin-bottom: 9px !important;
-}
-
-body.project-mode #projects .project-card p{
-    font-size: 0.88rem !important;
-    line-height: 1.45 !important;
-    margin-bottom: 14px !important;
-}
-
-body.project-mode .footer{
-    height: 78px !important;
-    padding: 24px 20px !important;
-}
-
-/* PHONE PROJECT VIEW: project tab scrolls internally only */
-@media(max-width: 768px){
-    body.project-mode{
-        overflow: hidden !important;
-        height: 100svh !important;
-    }
-
-    body.project-mode #projects{
-        height: calc(100svh - 78px) !important;
-        min-height: calc(100svh - 78px) !important;
-        padding: 55px 20px 40px !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-    }
-
-    body.project-mode #projects::-webkit-scrollbar{
-        width: 0 !important;
-        height: 0 !important;
-        display: none !important;
-    }
-
-    body.project-mode #projects .project-grid{
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-    }
-
-    body.project-mode #projects .project-card{
-        padding: 22px !important;
-    }
-
-    body.project-mode #projects .project-card img{
-        height: 150px !important;
-    }
-}
-
-/* CERTIFICATES PAGE: scrollable again, scrollbar hidden */
 html:has(body.certificates-body),
 body.certificates-body{
     overflow-x: hidden !important;
@@ -881,27 +416,71 @@ body.certificates-body .cert-page{
     padding-bottom: 80px !important;
 }
 
-body.certificates-body .cert-grid{
-    overflow: visible !important;
+@media(max-width: 768px){
+    body.certificates-body .cert-page{
+        padding: 45px 20px 80px !important;
+    }
+
+    body.certificates-body .cert-grid{
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+    }
+
+    body.certificates-body .cert-card{
+        width: 100% !important;
+        padding: 16px !important;
+        overflow: hidden !important;
+    }
+
+    body.certificates-body .cert-card img,
+    body.certificates-body .cert-card::after{
+        height: 190px !important;
+    }
+
+    body.certificates-body .cert-modal{
+        align-items: flex-start !important;
+        padding: 14px !important;
+        overflow-y: auto !important;
+    }
+
+    body.certificates-body .cert-modal-card{
+        width: 100% !important;
+        max-height: 92svh !important;
+        margin: 18px 0 !important;
+        padding: 22px 14px !important;
+        overflow: hidden !important;
+    }
+
+    body.certificates-body .cert-image-stage{
+        max-height: 68svh !important;
+    }
+
+    body.certificates-body .cert-image-stage img{
+        max-height: 66svh !important;
+    }
 }
 
-/* MODAL CLOSE BUTTONS: always above text/assets */
-.close-modal,
-.cert-modal-close,
-.viewer-close{
+/* =========================
+   MODAL CLOSE BUTTON FIX
+========================= */
+
+.close-modal{
     position: sticky !important;
     top: 0 !important;
     margin-left: auto !important;
     z-index: 99999 !important;
     background: rgba(15, 23, 42, 0.96) !important;
     backdrop-filter: blur(10px) !important;
-    isolation: isolate !important;
 }
 
 .cert-modal-close{
     position: absolute !important;
     top: 18px !important;
     right: 18px !important;
+    z-index: 99999 !important;
+    background: rgba(15, 23, 42, 0.96) !important;
+    backdrop-filter: blur(10px) !important;
 }
 
 .modal-card,

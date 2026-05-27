@@ -359,99 +359,31 @@ if (closeProject) {
         setTimeout(forceProjectModalTop, 50);
     });
 }
+/* FINAL CLEAN PORTFOLIO VIEW SWITCH */
 
+const cleanViewProjectsBtn = document.querySelector('.hero-buttons a[href="#projects"]');
+const cleanProjectsSection = document.getElementById("projects");
+const cleanBackHomeBtn = document.getElementById("backHome");
 
-/* FINAL SECTION LOCK PROJECT NAVIGATION */
-
-const viewProjectsButton = document.querySelector('.hero-buttons a[href="#projects"]');
-const projectsSection = document.getElementById("projects");
-
-if (viewProjectsButton && projectsSection && backHome) {
-    viewProjectsButton.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        projectsSection.classList.add("active");
-        backHome.classList.add("show");
-
-        requestAnimationFrame(() => {
-            projectsSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-            projectsSection.scrollTop = 0;
-        });
-    });
-
-    backHome.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        setTimeout(() => {
-            projectsSection.classList.remove("active");
-            projectsSection.scrollTop = 0;
-            backHome.classList.remove("show");
-        }, 450);
-    });
-}
-
-/* FINAL PORTFOLIO SECTION SWITCH SCRIPT */
-
-const finalViewProjectsBtn = document.querySelector('.hero-buttons a[href="#projects"]');
-const finalProjectsSection = document.getElementById("projects");
-const finalBackHomeBtn = document.getElementById("backHome");
-
-if (finalViewProjectsBtn && finalProjectsSection && finalBackHomeBtn) {
-    finalViewProjectsBtn.addEventListener("click", function(event) {
+if (cleanViewProjectsBtn && cleanProjectsSection && cleanBackHomeBtn) {
+    cleanViewProjectsBtn.addEventListener("click", function(event) {
         event.preventDefault();
         event.stopImmediatePropagation();
 
         document.body.classList.add("project-mode");
-        finalProjectsSection.scrollTop = 0;
-        finalBackHomeBtn.classList.add("show");
+        cleanProjectsSection.scrollTop = 0;
+        cleanBackHomeBtn.classList.add("show");
 
         history.replaceState(null, "", "#projects");
     }, true);
 
-    finalBackHomeBtn.addEventListener("click", function(event) {
+    cleanBackHomeBtn.addEventListener("click", function(event) {
         event.preventDefault();
         event.stopImmediatePropagation();
 
         document.body.classList.remove("project-mode");
-        finalProjectsSection.scrollTop = 0;
-        finalBackHomeBtn.classList.remove("show");
-
-        history.replaceState(null, "", window.location.pathname);
-    }, true);
-}
-
-/* FINAL PORTFOLIO VIEW SWITCH */
-
-const portfolioViewProjectsBtn = document.querySelector('.hero-buttons a[href="#projects"]');
-const portfolioProjectsSection = document.getElementById("projects");
-const portfolioBackHomeBtn = document.getElementById("backHome");
-
-if (portfolioViewProjectsBtn && portfolioProjectsSection && portfolioBackHomeBtn) {
-    portfolioViewProjectsBtn.addEventListener("click", function(event) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-
-        document.body.classList.add("project-mode");
-        portfolioProjectsSection.scrollTop = 0;
-        portfolioBackHomeBtn.classList.add("show");
-
-        history.replaceState(null, "", "#projects");
-    }, true);
-
-    portfolioBackHomeBtn.addEventListener("click", function(event) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-
-        document.body.classList.remove("project-mode");
-        portfolioProjectsSection.scrollTop = 0;
-        portfolioBackHomeBtn.classList.remove("show");
+        cleanProjectsSection.scrollTop = 0;
+        cleanBackHomeBtn.classList.remove("show");
 
         history.replaceState(null, "", window.location.pathname);
         window.scrollTo({ top: 0, behavior: "smooth" });
