@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Ralph John Santos, a BSIT graduate focused on digital support, admin support, customer support, documentation, and technology-based workflows.">
+    <title>Ralph John Santos | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<section class="hero">
+    <button class="hero-image" id="openAbout">
+        <img src="assets/profile/pic1.png" alt="Ralph John Santos">
+        <span class="image-overlay">About Me</span>
+    </button>
+
+    <h1>Ralph John Santos</h1>
+    <p>BSIT Graduate | Digital Support | Admin & Customer Support</p>
+
+    <div class="hero-buttons-wrapper">
+    <div class="hero-buttons">
+        <a href="#projects">View Projects</a>
+        <button id="openContact" class="secondary-btn">Contact Me</button>
+    </div>
+
+    <a href="pages/certificates.html" class="certificate-btn">View Certificates</a>
+</div>
+</section>
+
+<div class="modal" id="aboutModal">
+    <div class="modal-card">
+        <button class="close-modal" id="closeAbout"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="modal-content">
+            <div class="modal-text">
+                <h2>About Me</h2>
+                <p>Hi, I'm Ralph John Santos, an IT graduate passionate about technology, organization, communication, and continuous learning.</p>
+                <p>Through academic projects, OJT experiences, and personal initiatives, I gained exposure to digital systems, documentation workflows, multimedia editing, and AI-assisted tools.</p>
+                <p>As I continue exploring different career opportunities, I'm interested in roles where I can further develop these strengths while also gaining new experiences and contributing positively to a team or organization.</p>
+
+                <h3>Skills</h3>
+                <div class="icon-grid">
+                    <span>MS Office</span>
+                    <span>Google Workspace</span>
+                    <span>Basic HTML/CSS/Java</span>
+                    <span>Canva</span>
+                    <span>AI Tools</span>
+                    <span>Data Organization</span>
+                    <span>Communication</span>
+                    <span>Problem Solving</span>
+                    <span>Basic Video Editing</span>
+                    <span>Basic Photo Editing</span>
+                </div>
+
+                <h3>Hobbies & Interests</h3>
+                <div class="icon-grid">
+                    <span>Gaming</span>
+                    <span>Technology Exploration</span>
+                    <span>Photography</span>
+                    <span>Editing</span>
+                    <span>Cooking</span>
+                    <span>Traveling</span>
+                    <span>Business</span>
+                    <span>Spoken Poetry</span>
+                    <span>AI-Assisted Programming</span>
+                </div>
+            </div>
+
+            <div class="modal-photo">
+                <img src="assets/profile/pic2.png" alt="Ralph John Santos">
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="projects" id="projects">
+    <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p>Selected academic, personal, and OJT-related works that show my experience with digital systems, documentation, organization, and technology-based workflows.</p>
+    </div>
+
+    <div class="project-grid">
+        <div class="project-card" data-project="moniapp">
+            <div class="project-overlay">Click Me</div>
+            <img src="assets/thumbnails/moniapp.png" alt="MoniApp Thumbnail">
+            <h3>MoniApp</h3>
+            <p>Mobile-based product expiration monitoring application for sari-sari store inventory support.</p>
+            <span>School Project</span>
+        </div>
+
+        <div class="project-card" data-project="beh">
+            <div class="project-overlay">Click Me</div>
+            <img src="assets/thumbnails/beh.png" alt="Bataan Event Hub Thumbnail">
+            <h3>Bataan Event Hub</h3>
+            <p>Event management application with admin workflows, reports, reminders, and attendee features.</p>
+            <span>School Project</span>
+        </div>
+
+        <div class="project-card" data-project="quantum">
+            <div class="project-overlay">Click Me</div>
+            <img src="assets/thumbnails/quantoom.png" alt="Quantum Thumbnail">
+            <h3>Quantum Dance Studio</h3>
+            <p>OJT/company-related booking management website with admin and student workflow exposure.</p>
+            <span>OJT / Company Project</span>
+        </div>
+
+        <div class="project-card" data-project="blinkout">
+            <div class="project-overlay">Click Me</div>
+            <img src="assets/thumbnails/blinkout.png" alt="BlinkOut Thumbnail">
+            <h3>BlinkOut</h3>
+            <p>Personal multiplayer game concept focused on UI planning, inventory systems, and Firebase-based workflows.</p>
+            <span>Personal Project</span>
+        </div>
+    </div>
+</section>
+
+<button class="back-home" id="backHome">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<div class="modal" id="contactModal">
+    <div class="modal-card contact-modal-card">
+        <button class="close-modal" id="closeContact"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="section-header">
+            <h2>Contact Me</h2>
+            <p>Connect with me through my social links and contact platforms.</p>
+        </div>
+
+        <div class="contact-grid">
+            <a href="mailto:ralphjohnsantos01@gmail.com" class="contact-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>Email</h3>
+                <span>ralphjohnsantos01@gmail.com</span>
+            </a>
+
+            <a href="https://www.facebook.com/ralphjohn.santos.79" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fa-brands fa-facebook"></i>
+                <h3>Facebook</h3>
+                <span>John Santos</span>
+            </a>
+
+            <a href="https://github.com/potechto" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fa-brands fa-github"></i>
+                <h3>GitHub</h3>
+                <span>@potechto</span>
+            </a>
+
+            <a href="https://www.tiktok.com/@patatas0111" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fa-brands fa-tiktok"></i>
+                <h3>TikTok</h3>
+                <span>@patatas0111</span>
+            </a>
+
+            <a href="https://www.instagram.com/live_xps/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fa-brands fa-instagram"></i>
+                <h3>Instagram</h3>
+                <span>@live_xps</span>
+            </a>
+
+            <a href="Resources/resume.pdf" download class="contact-card">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <h3>Resume</h3>
+                <span>Download Resume</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="modal" id="projectModal">
+    <div class="modal-card project-modal-card">
+        <button class="close-modal" id="closeProject"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="project-modal-layout">
+            <div class="project-preview">
+                <img id="projectModalImage" src="" alt="Project Preview">
+            </div>
+
+            <div class="project-info">
+                <span id="projectModalType" class="project-type"></span>
+                <h2 id="projectModalTitle"></h2>
+                <div id="projectModalDescription"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Ralph John Santos • Digital Support Portfolio</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,145 @@
+﻿/* FULL RESPONSIVE DESIGN */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-image {
+        width: 190px;
+        height: 190px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 24px;
+        min-height: 100svh;
+    }
+
+    .hero-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: min(100%, 280px);
+        text-align: center;
+    }
+
+    .modal {
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .modal-card {
+        width: 100%;
+        max-height: 92svh;
+        padding: 24px 18px;
+        overflow-y: auto;
+    }
+
+    .modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .modal-photo img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        padding: 70px 24px;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .hero-image {
+        width: 135px;
+        height: 135px;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .modal-photo img {
+        height: 240px;
+    }
+
+    .icon-grid span {
+        font-size: 0.82rem;
+        padding: 8px 10px;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
+
+    .project-card img {
+        height: 140px;
+    }
+
+    .back-home {
+        width: 44px;
+        height: 44px;
+        right: 18px;
+        bottom: 18px;
+    }
+}

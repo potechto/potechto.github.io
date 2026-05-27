@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Certificates, academic credentials, OJT certifications, seminar certificates, and skills evidence of Ralph John Santos.">
+    <title>Certificates & Credentials | Ralph John Santos</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="certificates-body">
+
+<section class="cert-page">
+    <a href="../index.html" class="cert-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Portfolio
+    </a>
+
+    <div class="section-header">
+        <h2>Certificates & Credentials</h2>
+        <p>Academic credentials, seminar certificates, OJT certifications, and skills evidence related to digital support, admin work, documentation, and technology-based workflows.</p>
+    </div>
+
+    <p class="cert-helper">Click any card to preview. Use the zoom controls inside the viewer.</p>
+
+    <div class="cert-grid">
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/AI Seminar Santos, Ralph John.png" target="_blank">
+            <img src="../Resources/Certifications & Seminars/AI Seminar Santos, Ralph John.png" alt="AI Seminar Certificate">
+            <h3>AI Seminar</h3>
+            <span>Seminar Certificate</span>
+        </a>
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/BSIT 1yr-3yr DIPLOMA.jpg" target="_blank">
+            <img src="../Resources/Certifications & Seminars/BSIT 1yr-3yr DIPLOMA.jpg" alt="3-Year IT Diploma">
+            <h3>3-Year IT Diploma</h3>
+            <span>Academic Credential</span>
+        </a>
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/CSM GR11-12 DIPLOMA.jpg" target="_blank">
+            <img src="../Resources/Certifications & Seminars/CSM GR11-12 DIPLOMA.jpg" alt="Senior High Diploma">
+            <h3>Senior High Diploma</h3>
+            <span>Academic Credential</span>
+        </a>
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/From Capstone to Corporate Santos 405.png" target="_blank">
+            <img src="../Resources/Certifications & Seminars/From Capstone to Corporate Santos 405.png" alt="Capstone to Corporate Certificate">
+            <h3>Capstone to Corporate</h3>
+            <span>Seminar Certificate</span>
+        </a>
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/OJT CERT CHASE INTEGRATED SYSTEMS.jpg" target="_blank">
+            <img src="../Resources/Certifications & Seminars/OJT CERT CHASE INTEGRATED SYSTEMS.jpg" alt="CHASE OJT Certificate">
+            <h3>OJT - CHASE</h3>
+            <span>OJT Certification</span>
+        </a>
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/OJT CERT DINALUPIHAN MUNICIPAL HALL.jpg" target="_blank">
+            <img src="../Resources/Certifications & Seminars/OJT CERT DINALUPIHAN MUNICIPAL HALL.jpg" alt="Municipal Hall OJT Certificate">
+            <h3>OJT - Municipal Hall</h3>
+            <span>OJT Certification</span>
+        </a>
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/Robotics Seminar.jpg" target="_blank">
+            <img src="../Resources/Certifications & Seminars/Robotics Seminar.jpg" alt="Robotics Seminar Certificate">
+            <h3>Robotics Seminar</h3>
+            <span>Seminar Certificate</span>
+        </a>
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/Typing Test 1 Hard Text 1minute.png" target="_blank">
+            <img src="../Resources/Certifications & Seminars/Typing Test 1 Hard Text 1minute.png" alt="Typing Test Hard Result">
+            <h3>Typing Test - Hard</h3>
+            <span>Skills Evidence</span>
+        </a>
+
+        <a class="cert-card" href="../Resources/Certifications & Seminars/Typing Test 1 Medium Text 1minute.png" target="_blank">
+            <img src="../Resources/Certifications & Seminars/Typing Test 1 Medium Text 1minute.png" alt="Typing Test Medium Result">
+            <h3>Typing Test - Medium</h3>
+            <span>Skills Evidence</span>
+        </a>
+
+    </div>
+
+    <p class="cert-note">Sensitive document details may be reviewed or redacted before public sharing.</p>
+</section>
+
+
+<div class="cert-modal" id="certModal">
+    <div class="cert-modal-card">
+        <button class="cert-modal-close" id="closeCertModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="cert-modal-tools">
+            <button id="zoomOutCert"><i class="fa-solid fa-minus"></i></button>
+            <button id="resetZoomCert">Reset</button>
+            <button id="zoomInCert"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <div class="cert-image-stage">
+            <img id="certModalImage" src="" alt="Certificate Preview">
+        </div>
+
+        <h3 id="certModalTitle"></h3>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Ralph John Santos • Digital Support Portfolio</p>
+</footer>
+
+
+<script>
+const certCards = document.querySelectorAll(".cert-card");
+const certModal = document.getElementById("certModal");
+const closeCertModal = document.getElementById("closeCertModal");
+const certModalImage = document.getElementById("certModalImage");
+const certModalTitle = document.getElementById("certModalTitle");
+const zoomInCert = document.getElementById("zoomInCert");
+const zoomOutCert = document.getElementById("zoomOutCert");
+const resetZoomCert = document.getElementById("resetZoomCert");
+
+let certZoom = 1;
+
+function applyCertZoom() {
+    certModalImage.style.transform = `scale(${certZoom})`;
+}
+
+certCards.forEach(card => {
+    card.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const imagePath = card.getAttribute("href");
+        const title = card.querySelector("h3").textContent;
+
+        certZoom = 1;
+        certModalImage.src = imagePath;
+        certModalImage.alt = title;
+        certModalTitle.textContent = title;
+        applyCertZoom();
+
+        certModal.classList.add("active");
+    });
+});
+
+closeCertModal.addEventListener("click", () => {
+    certModal.classList.remove("active");
+    certModalImage.src = "";
+});
+
+zoomInCert.addEventListener("click", () => {
+    certZoom = Math.min(certZoom + 0.2, 2);
+    applyCertZoom();
+});
+
+zoomOutCert.addEventListener("click", () => {
+    certZoom = Math.max(certZoom - 0.2, 1);
+    applyCertZoom();
+});
+
+resetZoomCert.addEventListener("click", () => {
+    certZoom = 1;
+    applyCertZoom();
+});
+</script>
+
+
+<script>
+let certPanX = 0;
+let certPanY = 0;
+let isCertDragging = false;
+let certStartX = 0;
+let certStartY = 0;
+let certLastX = 0;
+let certLastY = 0;
+
+const certStage = document.querySelector(".cert-image-stage");
+
+function applyCertZoom() {
+    certModalImage.style.transform = `translate(${certPanX}px, ${certPanY}px) scale(${certZoom})`;
+
+    if (certStage) {
+        certStage.style.cursor = certZoom > 1 ? "grab" : "default";
+    }
+}
+
+certCards.forEach(card => {
+    card.addEventListener("click", () => {
+        certPanX = 0;
+        certPanY = 0;
+        setTimeout(applyCertZoom, 20);
+    });
+});
+
+if (certStage) {
+    certStage.addEventListener("pointerdown", (event) => {
+        if (certZoom <= 1) return;
+
+        isCertDragging = true;
+        certStartX = event.clientX;
+        certStartY = event.clientY;
+        certLastX = certPanX;
+        certLastY = certPanY;
+
+        certStage.classList.add("dragging");
+        certStage.setPointerCapture(event.pointerId);
+    });
+
+    certStage.addEventListener("pointermove", (event) => {
+        if (!isCertDragging) return;
+
+        certPanX = certLastX + (event.clientX - certStartX);
+        certPanY = certLastY + (event.clientY - certStartY);
+
+        applyCertZoom();
+    });
+
+    certStage.addEventListener("pointerup", (event) => {
+        isCertDragging = false;
+        certStage.classList.remove("dragging");
+
+        try {
+            certStage.releasePointerCapture(event.pointerId);
+        } catch {}
+    });
+
+    certStage.addEventListener("pointercancel", () => {
+        isCertDragging = false;
+        certStage.classList.remove("dragging");
+    });
+}
+
+zoomInCert.addEventListener("click", () => {
+    setTimeout(applyCertZoom, 20);
+});
+
+zoomOutCert.addEventListener("click", () => {
+    if (certZoom <= 1) {
+        certZoom = 1;
+        certPanX = 0;
+        certPanY = 0;
+    }
+
+    setTimeout(applyCertZoom, 20);
+});
+
+resetZoomCert.addEventListener("click", () => {
+    certPanX = 0;
+    certPanY = 0;
+    setTimeout(applyCertZoom, 20);
+});
+
+closeCertModal.addEventListener("click", () => {
+    certPanX = 0;
+    certPanY = 0;
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
