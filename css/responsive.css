@@ -539,3 +539,178 @@ body.project-mode #projects .project-card span{
         height: 150px !important;
     }
 }
+
+/* =========================================
+   FINAL VIEW MODE + FOOTER BEHAVIOR
+========================================= */
+
+/* Hide all scrollbars but keep allowed scrolling */
+html,
+body{
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#projects::-webkit-scrollbar,
+.modal-card::-webkit-scrollbar,
+.project-modal-card::-webkit-scrollbar,
+.cert-image-stage::-webkit-scrollbar{
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+/* HOME MODE */
+body:not(.project-mode){
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+body:not(.project-mode) .hero{
+    display: flex !important;
+}
+
+body:not(.project-mode) #projects{
+    display: none !important;
+}
+
+body:not(.project-mode) .footer{
+    display: block !important;
+}
+
+/* PROJECT MODE */
+body.project-mode{
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+body.project-mode .hero{
+    display: none !important;
+}
+
+body.project-mode #projects{
+    display: block !important;
+}
+
+body.project-mode .footer{
+    display: block !important;
+}
+
+/* Desktop/laptop project page should fit with footer visible */
+body.project-mode #projects{
+    height: calc(100vh - 78px) !important;
+    min-height: calc(100vh - 78px) !important;
+    padding: 52px 8% 28px !important;
+    overflow: hidden !important;
+    background: #070b1a !important;
+}
+
+body.project-mode #projects .section-header{
+    margin-bottom: 34px !important;
+}
+
+body.project-mode #projects .section-header h2{
+    font-size: clamp(2.4rem, 4vw, 3.2rem) !important;
+    margin-bottom: 12px !important;
+}
+
+body.project-mode #projects .section-header p{
+    line-height: 1.55 !important;
+    font-size: 0.95rem !important;
+}
+
+body.project-mode #projects .project-grid{
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+}
+
+body.project-mode #projects .project-card{
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 20px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+body.project-mode #projects .project-card img{
+    height: clamp(110px, 16vh, 155px) !important;
+    margin-bottom: 16px !important;
+    overflow: hidden !important;
+}
+
+body.project-mode #projects .project-card h3{
+    font-size: 1.12rem !important;
+    margin-bottom: 10px !important;
+}
+
+body.project-mode #projects .project-card p{
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+}
+
+body.project-mode #projects .project-card span{
+    margin-top: auto !important;
+}
+
+/* Footer sizing in project mode */
+body.project-mode .footer{
+    height: 78px !important;
+    padding: 24px 20px !important;
+    background: #070b1a !important;
+}
+
+/* Tablet can scroll project area if needed */
+@media(max-width: 1100px){
+    body.project-mode #projects{
+        overflow-y: auto !important;
+        padding: 60px 6% 35px !important;
+    }
+
+    body.project-mode #projects .project-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Phone: only projects section scrolls, footer remains after section content */
+@media(max-width: 768px){
+    body.project-mode{
+        overflow: hidden !important;
+    }
+
+    body.project-mode #projects{
+        height: calc(100svh - 78px) !important;
+        min-height: calc(100svh - 78px) !important;
+        padding: 55px 20px 40px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    body.project-mode #projects .project-grid{
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    body.project-mode #projects .project-card{
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 22px !important;
+    }
+
+    body.project-mode #projects .project-card img{
+        height: 150px !important;
+    }
+
+    body.project-mode .footer{
+        height: 78px !important;
+        padding: 24px 16px !important;
+        font-size: 0.82rem !important;
+    }
+}
