@@ -564,35 +564,3 @@ body::-webkit-scrollbar{
 
 
 
-/* About Me side arrow hint responsive behavior */
-@media (max-width: 768px){
-    .hero-profile-wrap{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-
-    .about-arrow-hint{
-        position: static;
-        transform: none;
-        margin-top: 8px;
-        justify-content: center;
-        gap: 5px;
-        opacity: 0.95;
-    }
-
-    .about-arrow-text{
-        font-size: 0.56rem;
-        padding: 3px 7px;
-    }
-
-    .about-arrow-line{
-        width: 18px;
-        height: 10px;
-    }
-
-    .about-arrow-head{
-        font-size: 0.8rem;
-    }
-}
