@@ -1250,3 +1250,44 @@ body::-webkit-scrollbar{
 .project-card span{
     margin-top: auto !important;
 }
+
+/* About Me photo hint badge */
+.about-photo-hint{
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 7px 12px;
+    border: 1px solid rgba(56, 189, 248, 0.55);
+    border-radius: 999px;
+    background: rgba(5, 8, 22, 0.72);
+    color: #e0f2fe;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.28);
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+    animation: aboutHintPulse 2.8s ease-in-out infinite;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-image:hover .about-photo-hint,
+.hero-image:active .about-photo-hint{
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px);
+}
+
+@keyframes aboutHintPulse{
+    0%, 100%{
+        opacity: 0.72;
+        box-shadow: 0 0 14px rgba(56, 189, 248, 0.22);
+    }
+
+    50%{
+        opacity: 1;
+        box-shadow: 0 0 24px rgba(124, 58, 237, 0.38), 0 0 22px rgba(56, 189, 248, 0.34);
+    }
+}

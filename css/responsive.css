@@ -559,3 +559,12 @@ body::-webkit-scrollbar{
         font-size: 0.78rem !important;
     }
 }
+
+/* About Me photo hint responsive adjustment */
+@media (max-width: 480px){
+    .about-photo-hint{
+        bottom: 10px;
+        padding: 6px 10px;
+        font-size: 0.65rem;
+    }
+}
