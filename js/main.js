@@ -233,6 +233,53 @@ const projectData = {
             "Expanded multiplayer systems",
             "Potential future public release"
         ]
+    },
+
+    gcashtracker: {
+        title: "GCash Transaction Tracker",
+        type: "Spreadsheet / Data Management Sample",
+        image: "Resources/gcash.png",
+
+        overview:
+            "A spreadsheet-based tracker designed to organize GCash cash-in and cash-out records, monitor balances, review missing or unrecorded transactions, and support clearer transaction documentation for small business workflows.",
+
+        features: [
+            "Cash-in and cash-out transaction tracking",
+            "Balance monitoring and record checking",
+            "Remarks and approval tracking",
+            "Missing or unrecorded transaction review",
+            "Summary and reporting support"
+        ],
+
+        role:
+            "Workflow Planner and Spreadsheet Organizer responsible for data structure planning, formula logic, testing, documentation, and AI-assisted spreadsheet development.",
+
+        tools: [
+            "Microsoft Excel",
+            "Spreadsheet Formulas",
+            "Data Organization",
+            "Conditional Formatting",
+            "AI-Assisted Workflow"
+        ],
+
+        challenges: [
+            "Designing a clearer flow for transaction monitoring",
+            "Organizing cash-in and cash-out records in a readable format",
+            "Improving visibility of missing, mismatched, or unrecorded data"
+        ],
+
+        learnings: [
+            "Improved spreadsheet planning and data organization",
+            "Strengthened attention to detail in transaction tracking",
+            "Learned how structured records can support better review and reporting"
+        ],
+
+        future: [
+            "Cleaner dashboard summary",
+            "Improved validation and approval flow",
+            "More automated missing-record indicators",
+            "Privacy-safe sample version for portfolio viewing"
+        ]
     }
 };
 const projectCards = document.querySelectorAll(".project-card");

@@ -323,7 +323,7 @@ body{
 
 .project-grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 24px;
 }
 
@@ -1230,7 +1230,7 @@ body::-webkit-scrollbar{
 .project-grid{
     width: 100% !important;
     display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
     gap: 24px !important;
     align-items: stretch !important;
     overflow: visible !important;
@@ -1307,3 +1307,4 @@ body::-webkit-scrollbar{
     letter-spacing: 0.2px;
     white-space: nowrap;
 }
+
