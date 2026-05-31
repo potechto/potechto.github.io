@@ -277,8 +277,7 @@ const projectData = {
         future: [
             "Cleaner dashboard summary",
             "Improved validation and approval flow",
-            "More automated missing-record indicators",
-            "Privacy-safe sample version for portfolio viewing"
+            "More automated missing-record indicators"
         ]
     }
 };
@@ -436,3 +435,4 @@ if (cleanViewProjectsBtn && cleanProjectsSection && cleanBackHomeBtn) {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, true);
 }
+
