@@ -1,4 +1,4 @@
-﻿html{
+html{
     scroll-behavior: smooth;
 }
 
@@ -1308,3 +1308,7 @@ body::-webkit-scrollbar{
     white-space: nowrap;
 }
 
+.hero-image img {
+    object-fit: cover;
+    object-position: center 18%;
+}
