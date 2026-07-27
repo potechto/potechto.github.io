@@ -1,4 +1,4 @@
-﻿/* FULL RESPONSIVE DESIGN - CLEAN FINAL VERSION */
+/* FULL RESPONSIVE DESIGN - CLEAN FINAL VERSION */
 
 /* Hide scrollbars visually, but allow scroll where enabled */
 html,
@@ -74,7 +74,8 @@ body.project-mode #projects{
     height: calc(100vh - 78px) !important;
     min-height: calc(100vh - 78px) !important;
     padding: 42px 8% 24px !important;
-    overflow: hidden !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
     background: #070b1a !important;
 }
 
@@ -94,7 +95,7 @@ body.project-mode #projects .section-header p{
 
 body.project-mode #projects .project-grid{
     display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     gap: 22px !important;
     align-items: stretch !important;
 }
@@ -133,6 +134,13 @@ body.project-mode .footer{
     height: 78px !important;
     padding: 24px 20px !important;
     background: #070b1a !important;
+}
+
+/* Balanced desktop grid for seven featured projects */
+@media(max-width: 1400px) and (min-width: 1101px){
+    body.project-mode #projects .project-grid{
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
 }
 
 /* =========================
@@ -333,6 +341,16 @@ body.project-mode .footer{
 
     .project-info h2{
         font-size: clamp(2rem, 10vw, 2.5rem) !important;
+    }
+
+    .project-resource-links{
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .project-resource-links a{
+        justify-content: center !important;
+        text-align: center !important;
     }
 
     .back-home{

@@ -1,4 +1,4 @@
-﻿const aboutModal = document.getElementById("aboutModal");
+const aboutModal = document.getElementById("aboutModal");
 const openAbout = document.getElementById("openAbout");
 const closeAbout = document.getElementById("closeAbout");
 const backHome = document.getElementById("backHome");
@@ -279,6 +279,115 @@ const projectData = {
             "Improved validation and approval flow",
             "More automated missing-record indicators"
         ]
+    },
+
+    rarfoods: {
+        title: "RAR Foods",
+        type: "Canva / Brand Identity Project",
+        image: "Resources/Canva Projects/Rar Foods/RAR2.png",
+
+        overview:
+            "A Canva-based restaurant brand identity concept for RestAllRant – RAR Foods. The project presents an all-day food brand through a welcoming logo, warm color palette, expressive typography, tagline, and documented brand voice.",
+
+        features: [
+            "Circular restaurant logo and visual mark",
+            "Warm food-inspired color palette",
+            "Typography and tagline system",
+            "Logo-symbol explanation and brand voice",
+            "Three-page brand presentation and documentation"
+        ],
+
+        role:
+            "Brand Concept and Visual Design Creator responsible for the name treatment, logo composition, color direction, typography selection, tagline, brand voice, and presentation layout.",
+
+        tools: [
+            "Canva",
+            "Brand Identity Planning",
+            "Logo Design",
+            "Visual Documentation",
+            "PDF Presentation"
+        ],
+
+        workflow:
+            "The concept was developed by defining the food brand's audience and personality, translating those ideas into a visual identity, refining the logo and palette, and documenting each design choice in a presentation-ready format.",
+
+        challenges: [
+            "Balancing a cozy restaurant feel with a modern presentation",
+            "Keeping the handwritten logo expressive while maintaining readability",
+            "Organizing multiple identity elements into one consistent brand system"
+        ],
+
+        learnings: [
+            "Improved visual-branding and presentation skills",
+            "Strengthened understanding of color and typography choices",
+            "Learned how to explain design decisions clearly through documentation"
+        ],
+
+        future: [
+            "Menu and promotional-material mockups",
+            "Social media templates",
+            "Packaging and storefront applications"
+        ],
+
+        resources: [
+            { label: "View Brand Presentation", href: "Resources/Canva Projects/Rar Foods/RAR FOODS.pdf" },
+            { label: "View Brand Board", href: "Resources/Canva Projects/Rar Foods/RAR2.png" }
+        ]
+    },
+
+    wrapngo: {
+        title: "Wrap N' Go",
+        type: "Canva / Brand Identity Project",
+        image: "Resources/Canva Projects/Wrap N' Go/Wrap N' Go Poster.png",
+
+        overview:
+            "A complete Canva-based branding and marketing concept for a portable burrito-style food business. The project focuses on freshness, speed, affordability, and convenient meals for students, office workers, and customers with busy routines.",
+
+        features: [
+            "Logo and complete brand identity",
+            "Portable packaging and wrap-sleeve concepts",
+            "Promotional poster and social media banner",
+            "Fresh green-and-orange visual system",
+            "Brand concept and project documentation"
+        ],
+
+        role:
+            "Brand Identity and Marketing Design Creator responsible for concept planning, logo design, packaging direction, promotional layouts, social media material, and written project documentation.",
+
+        tools: [
+            "Canva",
+            "Brand Concept Development",
+            "Packaging Design",
+            "Marketing Collateral",
+            "Visual Communication"
+        ],
+
+        workflow:
+            "The project began with the target market and brand positioning, followed by logo and palette development. The identity was then applied consistently across packaging, a wrap sleeve, a promotional poster, and a social media banner.",
+
+        challenges: [
+            "Keeping the identity consistent across different design formats",
+            "Combining freshness, speed, and appetite appeal without overcrowding layouts",
+            "Creating packaging and promotional assets that still feel part of one brand"
+        ],
+
+        learnings: [
+            "Improved cross-format brand consistency",
+            "Strengthened layout hierarchy and marketing-design skills",
+            "Gained experience presenting a concept through both visuals and documentation"
+        ],
+
+        future: [
+            "Additional menu and product variants",
+            "Reusable social media campaign templates",
+            "Expanded packaging mockups and storefront materials"
+        ],
+
+        resources: [
+            { label: "View Brand Concept", href: "Resources/Canva Projects/Wrap N' Go/Brand Concept.pdf" },
+            { label: "View Project Explanation", href: "Resources/Canva Projects/Wrap N' Go/Project Explanation.pdf" },
+            { label: "View Poster", href: "Resources/Canva Projects/Wrap N' Go/Wrap N' Go Poster.png" }
+        ]
     }
 };
 const projectCards = document.querySelectorAll(".project-card");
@@ -341,7 +450,7 @@ projectCards.forEach(card => {
             </div>
 
             <h3>Development Workflow</h3>
-            <p>AI-assisted development was used for coding support, debugging, planning, documentation, and iteration. Project direction, design decisions, feature planning, and workflow organization were personally managed.</p>
+            <p>${project.workflow || "AI-assisted development was used for coding support, debugging, planning, documentation, and iteration. Project direction, design decisions, feature planning, and workflow organization were personally managed."}</p>
 
             <h3>Challenges Encountered</h3>
             <ul>
@@ -357,6 +466,18 @@ projectCards.forEach(card => {
             <ul>
                 ${project.future.map(item => `<li>${item}</li>`).join("")}
             </ul>
+
+            ${project.resources?.length ? `
+                <h3>Project Files</h3>
+                <div class="project-resource-links">
+                    ${project.resources.map(resource => `
+                        <a href="${encodeURI(resource.href)}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            ${resource.label}
+                        </a>
+                    `).join("")}
+                </div>
+            ` : ""}
         `;
 
         projectModal.scrollTop = 0; projectModal.querySelector(".project-modal-card").scrollTop = 0; resetProjectModalScroll(); projectModal.classList.add("active");
