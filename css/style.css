@@ -945,8 +945,9 @@ html:has(.certificates-body)::-webkit-scrollbar{
 }
 
 .cert-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
     margin-top: 45px;
 }
@@ -1342,4 +1343,6 @@ body::-webkit-scrollbar{
     border-color: rgba(124,58,237,0.62);
     background: rgba(124,58,237,0.16);
 }
+
+
 
