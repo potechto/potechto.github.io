@@ -20,13 +20,7 @@ C:\Users\Ralph John\OneDrive\Desktop\ME FILES\ABOUT ME\Source Code
 The ONLY active portfolio source is:
 
 ABOUT ME
-└── Source Code
-
-
-Do not use:
-- old ZIP backups
-- extracted potechto.github.io folders
-- previous Source Code backups
++-- Source Code
 
 
 All future modifications must happen inside:
@@ -45,74 +39,92 @@ main
 
 Latest Commit:
 
-672d079
+1984bd6
 
 Message:
 
-Update RAR Foods thumbnail and improve certificate layout
+Improve certificate grid alignment
 
 
-Previous important commits:
+Recent important commits:
 
-84dee0a
-Center lone final featured project card
+6482c4b
+Update RAR Foods project preview image
 
-50808a5
-Add Canva projects and update downloadable resume
+2cba419
+Refresh certificate stylesheet version
 
-45195c9
-Remove Basic HTML CSS Java from skills
+7e33505
+Add current portfolio handover documentation
 
 
 ---
 
 # Recent Completed Updates
 
+
 ## Repository Migration
 
-Completed migration from old duplicated folders into:
+Completed migration into:
 
 ABOUT ME\Source Code
 
 
-Old duplicate repositories were removed.
+This is now the single source of truth.
 
-
-## RAR Foods Update
-
-Changed featured project thumbnail:
-
-Before:
-
-assets/thumbnails/rar-foods.png
-
-
-After:
-
-assets/thumbnails/rar-foods.jpg
-
-
-Source:
-
-Resources/Canva Projects/Rar Foods/RAR1.jpg
-
-
-Reason:
-
-The previous thumbnail used a transparent PNG style.
-The updated version uses the full brand showcase image.
+Avoid using:
+- old ZIP backups
+- previous extracted folders
+- duplicate repositories
 
 
 ---
 
-## Certificate Layout Update
+## RAR Foods Preview Update
+
+Updated:
+
+js/main.js
+
+
+Changed project preview references from:
+
+RAR2.png
+
+
+to:
+
+RAR1.jpg
+
+
+Affected:
+
+- Project modal preview
+- Brand Board viewer
+
+
+Current assets:
+
+assets/thumbnails/rar-foods.jpg
+
+Resources/Canva Projects/Rar Foods/RAR1.jpg
+
+
+Purpose:
+
+Removed the old transparent/incorrect RAR preview reference and standardized the project presentation image.
+
+
+---
+
+## Certificate Grid Update
 
 Updated:
 
 css/style.css
 
 
-Changed certificate grid behavior from:
+Changed certificate layout from:
 
 CSS Grid
 
@@ -122,24 +134,27 @@ to:
 Flex Wrap Layout
 
 
-Purpose:
+Current behavior:
 
-Automatically center incomplete rows.
+Desktop:
+- Certificate cards are centered.
+- Incomplete rows automatically center.
+
 
 Example:
 
-4 certificates:
-
 [1][2][3][4]
 
-
-6 certificates:
-
-[1][2][3][4]
    [5][6]
 
 
-Future certificates will automatically adjust without manual positioning.
+Mobile:
+- Existing single-column responsive layout remains.
+
+
+Purpose:
+
+Prevent incomplete certificate rows from being left-aligned.
 
 
 ---
@@ -148,14 +163,15 @@ Future certificates will automatically adjust without manual positioning.
 
 Source Code/
 
-├── index.html
-├── css/
-├── js/
-├── assets/
-│   └── thumbnails/
-├── pages/
-│   └── certificates.html
-└── Resources/
++-- index.html
++-- css/
++-- js/
++-- assets/
+�   +-- thumbnails/
++-- pages/
+�   +-- certificates.html
++-- Resources/
++-- PORTFOLIO_HANDOVER_CURRENT.md
 
 
 ---
@@ -176,27 +192,17 @@ Current certificates include:
 - Typing Test Medium
 
 
-Future certificates should be added here:
+Future certificates should be added inside:
 
 Resources/
-└── Certifications & Seminars/
-
-
-Then create a new:
-
-.cert-card
-
-
-inside:
-
-pages/certificates.html
++-- Certifications & Seminars/
 
 
 ---
 
 # Featured Projects
 
-Current portfolio projects include:
+Current featured projects include:
 
 - RAR Foods
 - Canva Projects
@@ -205,7 +211,7 @@ Current portfolio projects include:
 - OJT Projects
 
 
-Project thumbnails are stored:
+Project thumbnails:
 
 assets/thumbnails/
 
@@ -222,6 +228,8 @@ cd "ABOUT ME\Source Code"
 Check:
 
 git status
+
+git log -5 --oneline
 
 
 After changes:
@@ -254,16 +262,14 @@ ZIP this folder:
 ABOUT ME
 
 
-Do NOT ZIP:
-
-ME FILES entire folder
-
-
-The ZIP should automatically contain:
+The ZIP should contain:
 
 - Source Code
-- This handover file
-- Project context
+- Portfolio files
+- PORTFOLIO_HANDOVER_CURRENT.md
+
+
+Do not ZIP the entire ME FILES folder.
 
 
 ---
@@ -275,17 +281,17 @@ Always continue from:
 ABOUT ME\Source Code
 
 
-Check:
+Before modifying:
 
-git log -5 --oneline
+1. Check git status
+2. Check latest commit
+3. Read PORTFOLIO_HANDOVER_CURRENT.md
 
 
-before making changes.
-
-
-Avoid creating unnecessary backups.
+Avoid unnecessary backups.
 
 Use Git history as the backup system.
+
 
 ---
 
