@@ -284,7 +284,7 @@ const projectData = {
     rarfoods: {
         title: "RAR Foods",
         type: "Canva / Brand Identity Project",
-        image: "Resources/Canva Projects/Rar Foods/RAR2.png",
+        image: "Resources/Canva Projects/Rar Foods/RAR1.jpg",
 
         overview:
             "A Canva-based restaurant brand identity concept for RestAllRant – RAR Foods. The project presents an all-day food brand through a welcoming logo, warm color palette, expressive typography, tagline, and documented brand voice.",
@@ -331,7 +331,7 @@ const projectData = {
 
         resources: [
             { label: "View Brand Presentation", href: "Resources/Canva Projects/Rar Foods/RAR FOODS.pdf" },
-            { label: "View Brand Board", href: "Resources/Canva Projects/Rar Foods/RAR2.png" }
+            { label: "View Brand Board", href: "Resources/Canva Projects/Rar Foods/RAR1.jpg" }
         ]
     },
 
